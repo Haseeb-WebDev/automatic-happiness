@@ -1,38 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecommerce Services</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
+<body class="bg-gray-50 text-gray-800">
 
-  <div class="bg-white p-8 rounded-2xl shadow w-96">
-    <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
+  <!-- Navbar -->
+  <header class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">EcomPro</h1>
+      <nav class="space-x-6">
+        <a href="#services" class="hover:text-blue-600">Services</a>
+        <a href="#pricing" class="hover:text-blue-600">Pricing</a>
+        <a href="#contact" class="hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <input id="username" type="text" placeholder="Username" class="w-full p-3 border rounded mb-4" />
-    <input id="password" type="password" placeholder="Password" class="w-full p-3 border rounded mb-4" />
-
-    <button onclick="login()" class="w-full bg-blue-600 text-white py-3 rounded">Login</button>
-
-    <p id="error" class="text-red-500 mt-4 text-center"></p>
+  <!-- Login Button -->
+  <div class="text-right max-w-7xl mx-auto px-4 mt-4">
+    <a href="auth.html" class="bg-blue-600 text-white px-4 py-2 rounded">Login</a>
+    <span id="welcomeUser" class="ml-4 font-semibold"></span>
   </div>
 
-  <script>
-    function login(){
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+  <!-- Hero Section -->
+  <section class="text-center py-20 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+    <h2 class="text-4xl font-bold mb-4">Grow Your Ecommerce Business</h2>
+    <p class="mb-6">We provide professional ecommerce services to scale your online store.</p>
+    <a href="#services" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold">Explore Services</a>
+  </section>
 
-      // Preconfigured user
-      if(username === 'admin' && password === 'admin'){
-        localStorage.setItem('loggedInUser', username);
-        window.location.href = 'index.html';
-      } else {
-        document.getElementById('error').innerText = 'Invalid credentials';
-      }
+  <!-- Services Section -->
+  <section id="services" class="py-16 max-w-7xl mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center mb-10">Our Services</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-2xl shadow">
+        <h4 class="text-xl font-semibold mb-2">Store Setup</h4>
+        <p>Complete Shopify & WooCommerce store setup with optimized design.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow">
+        <h4 class="text-xl font-semibold mb-2">Product Listing</h4>
+        <p>SEO-friendly product uploads with images, descriptions, and pricing.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow">
+        <h4 class="text-xl font-semibold mb-2">Marketing</h4>
+        <p>Facebook Ads, Google Ads, and email marketing to boost sales.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="bg-gray-100 py-16">
+    <h3 class="text-3xl font-bold text-center mb-10">Pricing Plans</h3>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 px-4">
+      <div class="bg-white p-6 rounded-2xl shadow text-center">
+        <h4 class="text-xl font-bold mb-2">Basic</h4>
+        <p class="text-3xl font-bold mb-4">PKR 27,500</p>
+        <ul class="mb-6 space-y-2">
+          <li>Store Setup</li>
+          <li>5 Products</li>
+        </ul>
+        <button class="bg-blue-600 text-white px-6 py-2 rounded">Choose Plan</button>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow text-center">
+        <h4 class="text-xl font-bold mb-2">Standard</h4>
+        <p class="text-3xl font-bold mb-4">PKR 55,000</p>
+        <ul class="mb-6 space-y-2">
+          <li>Store Setup</li>
+          <li>20 Products</li>
+          <li>Basic Marketing</li>
+        </ul>
+        <button class="bg-blue-600 text-white px-6 py-2 rounded">Choose Plan</button>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow text-center">
+        <h4 class="text-xl font-bold mb-2">Premium</h4>
+        <p class="text-3xl font-bold mb-4">PKR 110,000</p>
+        <ul class="mb-6 space-y-2">
+          <li>Full Store Setup</li>
+          <li>Unlimited Products</li>
+          <li>Advanced Marketing</li>
+        </ul>
+        <button class="bg-blue-600 text-white px-6 py-2 rounded">Choose Plan</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 max-w-4xl mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center mb-10">Contact Us</h3>
+    <form class="bg-white p-6 rounded-2xl shadow space-y-4">
+      <input type="text" placeholder="Your Name" class="w-full p-3 border rounded" />
+      <input type="email" placeholder="Your Email" class="w-full p-3 border rounded" />
+      <textarea placeholder="Your Message" class="w-full p-3 border rounded"></textarea>
+      <button class="bg-blue-600 text-white px-6 py-3 rounded w-full">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-6">
+    <p>© 2026 EcomPro. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Show logged in user
+    const user = localStorage.getItem('loggedInUser');
+    if(user){
+      document.getElementById('welcomeUser').innerText = "Welcome, " + user;
     }
   </script>
-
 </body>
 </html>
